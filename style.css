@@ -1,0 +1,2070 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(island-under-the-sea-wallpaper-89101_w635.webp);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.logo {
+    width: 200px;
+    color: beige;
+    font-size: 35px;
+}
+
+span {
+    color: rgb(45, 236, 19);
+}
+
+.nav-link {
+    flex: 1;
+    text-align: right;
+
+}
+
+.nav-link ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-link ul li a {
+    color: #fff;
+    font-size: 14px;
+
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+}
+
+.nav-link ul li a:hover {
+    color: rgb(14, 85, 216);
+}
+
+.t-box {
+    width: 90%;
+    color: #fff;
+    top: 35%;
+    position: absolute;
+    left: 5%;
+
+    text-align: center;
+    font-family: ' Arial';
+
+}
+
+.t-box h1 {
+    font-size: 50px;
+
+}
+
+.t-box p {
+    margin: 10px 0 4px;
+    font-size: 17px;
+    color: #fff;
+
+
+}
+
+.h-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.h-btn:hover {
+    border: 1px solid #43ee9e;
+    background: #30cfe4;
+    transition: 1s;
+}
+
+nav img {
+    display: none;
+
+}
+
+.cta p {
+    color: #0fdceb;
+}
+
+
+@media screen and (max-width:800px) {
+
+
+
+
+    .t-box h1 {
+        font-size: 22px;
+    }
+
+    .t-box p {
+        font-size: 15px;
+    }
+
+    .nav-link ul li {
+        display: block;
+
+    }
+
+    .nav-link {
+        position: absolute;
+        background: #108663;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+    }
+
+
+    nav img {
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .nav-link ul {
+        padding: 30px;
+
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+}
+
+/*-----about-----*/
+.about {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+p {
+    color: #131111;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.about-col {
+    flex-basis: 31%;
+    background: #b2eeb7;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+
+}
+
+.about-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media(max-width:800px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+/*-----pictures-----*/
+.pic {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.pic-box {
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pic-box img {
+    width: 100%;
+    display: block;
+}
+
+.layer {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.layer:hover {
+    background: rgba(14, 186, 238, 0.6);
+}
+
+.layer h3 {
+    width: 100%;
+    font-weight: 300;
+    color: #2e2929;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.layer:hover h3 {
+    bottom: 48%;
+    opacity: 1;
+}
+
+.vision {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.vision-dic {
+    flex-basis: 31%;
+    border-radius: 5px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+.vision-dic img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.vision-dic p {
+    padding: 0;
+}
+
+.vision-dic h3 {
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/*-----call to action-----*/
+.cta {
+    height: 40vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(turtle5.webp);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.cta h1 {
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+@media(max-width:800px) {
+    .cta h1 {
+        font-size: 24px;
+    }
+}
+
+/*-----footer-----*/
+.fotr {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.fotr h4 {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.ic {
+    background-color: #0ef059;
+}
+
+
+
+
+.sub-header {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 8, 30, 0.7), rgba(4, 8, 30, 0.7)), url(tur_hatch1.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+
+.sub-header h1 {
+    margin-top: 100px;
+
+}
+
+.catag-table p {
+    width: 100%;
+    margin-left: 10px;
+    padding: 0;
+    font-size: 16px;
+}
+
+.dTable {
+    width: 90%;
+    margin-left: 5%;
+    border-collapse: collapse;
+
+}
+
+.dTable p {
+    font-size: 16px;
+}
+
+.dTable td,
+th {
+    border: 1px solid rgb(6, 16, 78);
+
+}
+
+.dTable thead tr:nth-child(2) {
+    background: #033a3b;
+    color: #fff;
+
+}
+
+.dTable tbody tr:nth-child(odd) {
+    background: #bdeed1;
+}
+
+.dTable tbody tr:hover {
+    background: #55ffcc;
+}
+
+.dTable tfoot td {
+    font-size: 12px;
+    text-align: center;
+}
+
+.map h1 {
+    text-align: center;
+    color: #f2faee;
+}
+
+.map {
+    background-color: #253a30;
+}
+
+.gp img {
+    margin-right: 20px;
+
+}
+
+.world-map {
+    align-items: center;
+    margin-left: 20%;
+
+}
+
+.world-map img {
+    height: 70%;
+}
+
+@media screen and (max-width:800px) {
+
+
+    .sub-header {
+        background-image: url(jungle.jpg);
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+
+    .catag-table p {
+        font-size: 12px;
+    }
+
+    .world-map img {
+        height: 50%;
+        width: 56%;
+
+
+    }
+
+    .dTable {
+        width: auto;
+        height: 70%;
+        border-collapse: collapse;
+    }
+
+    .dTable img {
+        width: 100px;
+        height: 75px;
+    }
+}
+
+/*----for i phones---*/
+@media screen and (max-width:480px) {
+
+
+    .sub-header {
+        background-image: url(turtle3ne.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: auto;
+
+    }
+
+
+    .nav-link {
+        position: absolute;
+        background: #108663;
+        height: 100vh;
+        width: 170px;
+        top: 0;
+        right: -220px;
+        text-align: left;
+        z-index: 2;
+    }
+
+    .catag-table p {
+        font-size: 10px;
+    }
+
+    .dTable {
+        width: auto;
+
+        border-collapse: collapse;
+    }
+
+    .dTable img {
+        width: 60px;
+        height: 50px;
+
+    }
+}
+
+
+
+
+
+
+/*-----Hikkaduwa hatchery page-----*/
+.new-header {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(5, 32, 44, 0.7), rgba(5, 32, 44, 0.7)), url(sea-water-clouds-the-ocean-turtle-hd-wallpaper-preview.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+
+.new-header h1 {
+    margin-top: 100px;
+}
+
+.new-header p {
+    color: #fff;
+    font-size: 16px;
+}
+
+/*----Hikkaduwa Content----*/
+.hi-content {
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+
+}
+
+.hi-col {
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+
+.hi-col img {
+    width: 90%;
+    display: block;
+}
+
+.hi-col h1 {
+    padding-top: 0;
+}
+
+.hi-col p {
+    padding: 15px 0 25px;
+    font-size: 16px;
+}
+
+.pic-btn
+
+/*----Hikkaduwa pictures----*/
+.pictureq {
+    width: 70px;
+    margin: auto;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+
+}
+
+.pictureq h1 {
+    text-align: center;
+}
+
+.fit {
+
+    flex-basis: 50%;
+
+    margin-bottom: 10%;
+    width: 80%;
+
+}
+
+.fit p {
+    padding: 0%;
+    margin-left: 20px;
+    margin-right: 10px;
+
+
+}
+
+.fit img {
+    width: 60%;
+    height: 80%;
+    margin-left: 120px;
+    margin-right: 20px;
+}
+
+.uv h1 {
+    margin-top: 0;
+    text-align: center;
+    color: #af1212;
+}
+
+.uv img {
+    margin-left: 450px;
+    margin-top: 50px;
+}
+
+.uv p {
+    margin-left: 60px;
+}
+
+.btn3 {
+    width: 150px;
+    height: 50px;
+    background: transparent;
+
+
+    border: 1px solid #fff;
+    display: inline-block;
+
+    font-style: italic;
+    position: relative;
+
+}
+
+.btn3 a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+
+}
+
+.btn3:hover {
+    background-color: #1f334b;
+}
+
+.btn3 a:hover {
+    color: #f30a7f;
+    cursor: pointer;
+
+
+}
+
+/*---for tabblets*/
+@media screen and (max-width:800px) {
+    .new-header {
+        background-image: url(sddefault.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+
+
+    }
+
+    .new-header p {
+        font-size: 15px;
+    }
+
+    .nav-link {
+        position: absolute;
+        background: #108663;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+    }
+
+    .uv img {
+        width: 300px;
+        margin-left: 100px;
+
+    }
+
+    .uv p {
+        margin-left: 10px;
+        font-size: 13px;
+    }
+
+    .new-header p {
+        font-size: 12px;
+    }
+
+    .hi-col p {
+        font-size: 13px;
+    }
+
+    .fit p {
+        font-size: 13px;
+    }
+}
+
+/*--for iphone---*/
+@media screen and (max-width:480px) {
+
+    .new-header {
+        background-image: url(sddefault.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+
+
+    }
+
+    .hi-col p {
+        font-size: 13px;
+    }
+
+    .fit p {
+        font-size: 13px;
+    }
+
+    .uv p {
+        font-size: 13px;
+    }
+
+}
+
+
+
+
+/*---Threats to turtle---*/
+.now-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(kosgo21.jpg);
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.now-header h1 {
+    margin-top: 100px;
+    color: #fff;
+}
+
+.threat {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 50px;
+    padding-top: 80px;
+}
+
+.tea p {
+    font-size: 16px;
+}
+
+.milk p {
+    font-size: 16px;
+}
+
+.cofee p {
+    font-size: 16px;
+}
+
+.pini p {
+    font-size: 16px;
+}
+
+.light h1 {
+    text-align: center;
+    color: #af1212;
+}
+
+.light p {
+    text-align: center;
+    font-size: 16px;
+}
+
+.sun ol {
+    font-size: 16px;
+    margin-left: 80px;
+}
+
+.moon {
+    background-color: #083b23;
+
+}
+
+.moon img {
+    margin-left: 550px;
+    width: 30%;
+    height: 30%;
+
+}
+
+.moon h1 {
+    margin-right: 90px;
+    margin-left: 10px;
+    margin-top: 100px;
+    color: #bdeed1;
+
+}
+
+/*---for tabblets---*/
+@media screen and (max-width:800px) {
+
+    .now-header {
+        background-image: url(turtle+hatchling.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+
+    .tea h1 {
+        font-size: 18px;
+    }
+
+    .tea p {
+        font-size: 13px;
+    }
+
+    .tea img {
+        width: 200px;
+        height: 100px;
+    }
+
+    .milk img {
+        width: 200px;
+        height: 100px;
+    }
+
+    .milk p {
+        font-size: 13px;
+    }
+
+    .milk h1 {
+        font-size: 18px;
+    }
+
+    .cofee h1 {
+        font-size: 18px;
+    }
+
+    .cofee p {
+        font-size: 13px;
+    }
+
+    .cofee img {
+        width: 200px;
+        height: 100px;
+    }
+
+    .pini h1 {
+        font-size: 18px;
+
+    }
+
+    .pini p {
+        font-size: 13px;
+    }
+
+    .pini img {
+        width: 200px;
+        height: 100px;
+    }
+
+    .light h1 {
+        font-size: 20px;
+    }
+
+    .light p {
+        font-size: 13px;
+    }
+
+    .sun ol li {
+        font-size: 13px;
+    }
+
+    .sun img {
+        width: 150px;
+        height: 150px;
+        margin-left: 60px;
+    }
+
+
+
+
+    .moon img {
+        margin-left: 30px;
+    }
+
+    .moon h1 {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+}
+
+
+
+
+
+
+/*----bentota----*/
+.hi-header {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(27, 15, 58, 0.7), rgba(0, 0, 0, 0.7)), url(banner\ bentota.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.hi-header h1 {
+    color: #fff;
+    font-size: 25px;
+}
+
+.hi-header p {
+    color: #fff;
+    font-size: 16px;
+}
+
+.tree {
+    background-color: #e6cbc4;
+}
+
+.tree p {
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.tree ol li {
+    margin-left: 50px;
+}
+
+.rock img {
+    margin-left: 25px;
+}
+
+.sea h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    background-color: #f1f8f6;
+}
+
+.jb {
+    background-color: #f5dcd1;
+}
+
+.yk p {
+    margin-top: 10px;
+
+}
+
+.yk img {
+    margin-left: 30px;
+}
+
+.yk h2 {
+    margin-left: 30px;
+    text-align: center;
+
+}
+
+.jip {
+    width: 100%;
+    height: 50vh;
+    background-image: url(et.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.jip h1 {
+    color: #bdeed1;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+
+}
+
+/*--- for tabblet---*/
+@media screen and (max-width:800px) {
+    .hi-header {
+        background-image: url(banner\ bentota.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        background-position: center;
+    }
+
+    .hi-header h1 {
+        font-size: 14px;
+    }
+
+    .hi-header p {
+        font-size: 13px;
+    }
+
+    .tree p {
+        font-size: 13px;
+    }
+}
+
+/*----for iphone----*/
+@media screen and (max-width:480px) {
+
+    .hi-header {
+        background-image: url(banner\ bentota.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        background-position: center;
+    }
+
+    .hi-header p {
+        font-size: 12px;
+    }
+
+    .tree p {
+        font-size: 12px;
+    }
+
+    .tree ol li {
+        font-size: 12px;
+    }
+
+    .yk p {
+        font-size: 12px;
+    }
+
+    .rock img {
+        margin-left: 40px;
+    }
+}
+
+/*----kodgoda----*/
+.fun-header {
+
+
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(BabySeaTurtleFacesOcean.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+
+}
+
+.fun-header h1 {
+    color: #fff;
+    text-align: center;
+}
+
+.fun-header p {
+    color: #fff;
+    text-align: center;
+    margin-top: 120px;
+    font-size: 16px;
+}
+
+.hiru p {
+    margin-left: 50px;
+    font-size: 16px;
+}
+
+.hiru img {
+    margin-left: 30px;
+}
+
+.star img {
+    margin-left: 200px;
+    margin-top: 90px;
+}
+
+.st p {
+    margin-left: 30px;
+    font-size: 16px;
+}
+
+.kk h1 {
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.pop img {
+    width: 90%;
+    height: 90vh;
+    margin-left: 85px;
+}
+
+.sm {
+    height: 100vh;
+    background-image: url(rk.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.sm h1 {
+    text-align: center;
+    color: #2191c5;
+    margin-top: 60px;
+
+}
+
+/*---for iphone---*/
+@media screen and (max-width:480px) {
+
+    .fun-header p {
+        font-size: 13px;
+    }
+
+    .hiru img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hiru p {
+        font-size: 13px;
+    }
+
+    .kk h1 {
+        font-size: 22px;
+    }
+
+    .star img {
+        width: 450px;
+        height: 200px;
+        margin-left: 20px;
+    }
+
+    .st p {
+        font-size: 13px;
+    }
+
+    .pop img {
+        margin-left: 20px;
+        height: 350px;
+    }
+
+}
+
+/*--for tabblet--*/
+@media screen and (max-width:800px) {
+    .fun-header p {
+        font-size: 14px;
+    }
+
+    .hiru img {
+        width: 700px;
+        height: 500px;
+    }
+
+    .hiru p {
+        font-size: 14px;
+        margin-left: 20px;
+    }
+
+    .kk h1 {
+        font-size: 25px;
+    }
+
+    .star img {
+        width: 600px;
+        height: 200px;
+        margin-left: 40px;
+    }
+
+    .st p {
+        font-size: 13px;
+    }
+
+    .pop img {
+        margin-left: 35px;
+        height: 350px;
+    }
+}
+
+/*----pharchase & donate page----*/
+.super-header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(baby.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.super-header h1 {
+    text-align: center;
+    color: #fff;
+}
+
+.red h1 {
+    margin-top: 40px;
+    text-align: center;
+    color: #af1212;
+}
+
+.bomb {
+    background-color: #e79d71;
+}
+
+.bomb img {
+    margin-left: 200px;
+}
+
+.bomb p {
+    margin-right: 100px;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+.bob {
+    width: 90%;
+}
+
+.bob img {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.flo img {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.donate h1 {
+    text-align: center;
+    color: #298688;
+    margin-top: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 30px;
+}
+
+.donate {
+    width: 100%;
+    height: 100vh;
+    background-image: url(home_about_section.webp);
+
+}
+
+.donate p {
+    margin-left: 60px;
+}
+
+.donate li p {
+    margin-left: 60px;
+}
+
+.clouds ol li {
+    line-height: 25px;
+    margin-left: 90px;
+    font-size: 17px;
+}
+
+.clouds h2 {
+    margin-left: 60px;
+}
+
+.happy td {
+    padding: 15px;
+    color: #fff;
+
+
+}
+
+.happy h1 {
+    margin-left: 550px;
+}
+
+.happy form {
+    background-color: #3b6d81;
+    font-size: 20px;
+}
+
+.happy table {
+    text-align: center;
+    margin-left: 500px
+}
+
+.but {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 13px 35px;
+    font-size: 14px;
+    background: transparent;
+
+    cursor: pointer;
+    margin-left: 630px;
+
+}
+
+.og h2 {
+    margin-left: 450px;
+    color: #f3f2f2;
+}
+
+.but:hover {
+    border: 1px solid #da5beb;
+    background: #664c5a;
+    transition: 1s;
+
+}
+
+.bk {
+    background-color: #43ee9e;
+
+}
+
+/*---for tabblet---*/
+@media screen and (max-width:800px) {
+
+    .super-header {
+        background-image: url(baby.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+
+    .bomb img {
+        width: 50%;
+        height: 50vh;
+        margin-left: 20px;
+
+    }
+
+    .bob p {
+        margin-top: -110px;
+        margin-left: 300px;
+        font-size: 12px;
+    }
+
+    .bob img {
+        width: 25%;
+        height: 50%;
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+
+    .flo img {
+        width: 25%;
+        height: 50%;
+        margin-left: 40px;
+        margin-top: 30px;
+    }
+
+    .flo p {
+        margin-top: -110px;
+        margin-left: 300px;
+        font-size: 12px;
+    }
+
+    .donate {
+
+        height: 550px;
+        background-image: url(home_about_section.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .donate h1 {
+        font-size: 14px;
+    }
+
+    .donate p {
+        font-size: 12px;
+    }
+
+    .clouds {
+        width: 90%;
+        height: 100vh;
+    }
+
+    .clouds h2 {
+        font-size: 13px;
+    }
+
+    .clouds ol li {
+        font-size: 12px;
+    }
+
+    .happy h1 {
+        font-size: 16px;
+        margin-left: 200px;
+    }
+
+    .happy table {
+        text-align: left;
+        margin-left: 110px;
+    }
+
+    .happy td {
+        padding: 12px;
+        font-size: small;
+    }
+
+    .og h2 {
+        font-size: 16px;
+        margin-left: 120px;
+    }
+
+    .but {
+        margin-left: 200px;
+        width: 40px;
+        height: 20px;
+    }
+}
+
+/*--- media query for the iphone---*/
+@media screen and (max-width:480px) {
+    .super-header {
+        background-image: url(baby.webp);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .donate {
+        background-image: url(home_about_section.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 500px;
+        width: auto;
+    }
+
+    .clouds ol li {
+        font-size: 8px;
+        line-height: 20px;
+    }
+
+    .donate p {
+        font-size: 12px;
+        margin-left: 10px;
+        padding: 5px;
+    }
+
+    .happy table {
+        margin-top: 20px;
+
+    }
+
+}
+
+/*---iphoneSE---*/
+@media screen and (max-width:375px) {
+    .super-header {
+        background-image: url(top.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .clouds ol li {
+        font-size: 8px;
+        padding: 0%;
+    }
+
+    .nav-link {
+        position: absolute;
+        background: #108663;
+        height: 100vh;
+        width: 180px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+    }
+
+    .bomb img {
+        height: 200px;
+    }
+
+    .bob p {
+        margin-left: 190px;
+    }
+
+    .flo p {
+        margin-left: 190px;
+    }
+
+    .donate p {
+        margin-left: 5px;
+        font-size: 10px;
+    }
+
+    .donate {
+        background-image: url(home_about_section.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 600px;
+        width: auto;
+    }
+
+    .donate li p {
+        margin-left: 5px;
+        font-size: 9px;
+    }
+
+    .happy table {
+        margin-top: 10px;
+        margin-left: 10px;
+
+    }
+
+    .bk {
+        margin-top: -10px;
+    }
+
+    .og {
+        margin-left: 10px;
+    }
+
+    .but {
+        width: 100px;
+        height: 40px;
+    }
+
+}
+
+/*----for the desktop----*/
+@media screen and (max-width:1024px) {
+    .super-header {
+        background-image: url(baby.webp);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .donate {
+        background-image: url(home_about_section.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 500px;
+        width: auto;
+    }
+
+    .clouds ol li {
+        font-size: 8px;
+        line-height: 20px;
+    }
+
+    .donate p {
+        font-size: 12px;
+        margin-left: 10px;
+        padding: 5px;
+    }
+
+    .happy table {
+        margin-top: 20px;
+
+    }
+
+}
+
+/*---iphoneSE---*/
+@media screen and (max-width:375px) {
+    .super-header {
+        background-image: url(top.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .clouds ol li {
+        font-size: 8px;
+        padding: 0%;
+    }
+
+    .nav-link {
+        position: absolute;
+        background: #108663;
+        height: 100vh;
+        width: 180px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+    }
+
+    .bomb img {
+        height: 200px;
+    }
+
+    .bob p {
+        margin-left: 190px;
+    }
+
+    .flo p {
+        margin-left: 190px;
+    }
+
+    .donate p {
+        margin-left: 5px;
+        font-size: 10px;
+    }
+
+    .donate {
+        background-image: url(home_about_section.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 600px;
+        width: auto;
+    }
+
+    .donate li p {
+        margin-left: 5px;
+        font-size: 9px;
+    }
+
+    .happy table {
+        margin-top: 10px;
+        margin-left: 10px;
+
+    }
+
+    .bk {
+        margin-top: -10px;
+    }
+
+    .og {
+        margin-left: 10px;
+    }
+
+    .but {
+        width: 100px;
+        height: 40px;
+    }
+}
+
+/*--net hub---*/
+@media screen and (max-width:1024px) {
+
+
+    .nav-link ul li a {
+        color: #fff;
+        font-size: 12px;
+
+        text-decoration: none;
+        transition: 0.4s ease-in-out;
+    }
+
+    .nav-link ul li {
+        list-style: none;
+        display: inline-block;
+        position: relative;
+    }
+}
+
+/*---paymentpage---*/
+* {
+    box-sizing: border-box;
+}
+
+
+
+
+
+.input {
+    border: 1px solid #999;
+}
+
+.input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selection select {
+    padding: 10px 20px;
+}
+
+.ap {
+    background-color: blueviolet;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+.ap:hover {
+    background-color: #2191c5;
+}
+
+.cards img {
+    width: 100px;
+}
+
+.baab {
+    margin-left: 300px;
+    margin-top: 100px;
+}
+
+/*tickets page*/
+
+.topic {
+    width: auto;
+    height: 70px;
+    background-color: #07f37191;
+
+    color: #fff;
+
+
+}
+
+.topic h1 {
+    text-align: center;
+}
+
+.homi {
+    color: #FFF;
+    text-decoration: none;
+
+
+
+
+
+    cursor: pointer;
+    background-color: #07f37100;
+}
+
+.tic-header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("hikkaduwa-1-sri-lanka.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    color: #fff;
+}
+
+.logo1 {
+    width: 200px;
+    color: beige;
+    font-size: 35px;
+}
+.summaryT{
+    width: 80%;
+    margin-left: 300px;
+}
+.summary-Table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+.summary-Table th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.summaryHead{
+    background-color: #f2f2f2;
+}
+
+
+
+
+/*media quaries*/
+@media screen and(max-width:380px) {
+    .tic-header {
+        min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("hikkaduwa-1-sri-lanka.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        color: #fff;
+    }
+
+
+}
+
+
+
+
+
+
+/*--calender--*/
+
+
+
+
+/*--Guests section starts--*/
+.guest h2 {
+    margin-left: 200px;
+    color: #0f42eb;
+}
+
+.top-guest {
+    align-items: center;
+    margin-left: 400px;
+
+}
+
+.information {
+    box-sizing: border-box;
+    width: 300px;
+    margin: 20vh auto 0 auto;
+    padding: 20px;
+    background-color: rgb(231, 240, 239);
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: #131111;
+
+
+
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+}
+
+.info button {
+    padding: 12px;
+    margin: 16px;
+    font-size: 20px;
+}
+
+.info h3 {
+    font-size: 30px;
+}
+
+
+/*--media quary--*/
+
+@media screen and(max-width:380px) {
+.confiremationPage{
+    width: 200px;
+    font-size: 10px;
+}
+.tbsum{
+
+width: 20%;
+margin-left: 5px;
+
+
+
+}
+
+
+
+}
+
+
+
+.table-info{
+    border-collapse: collapse;
+
+
+
+}
+
+.table-info table {
+    background-color: #ffffff65;
+
+}
+
+.table-info td,
+th {
+    border: 1px solid rgb(12, 15, 36);
+    padding: 3px 3px;
+
+}
+
+
+
+.formStyle{
+    background-image:linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("rk.png"); ;
+    padding: 20px 80px;
+    color: #2258ec;
+}
+.summaryT {
+    margin-top: 20px;
+    padding: 5px;
+    border: 1px solid #4d3434;
+    border-radius: 5px;
+    margin-left: 20px;
+    color: #FFF;
+    margin-left: 280px;
+  }
+  
+  #summary-Table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 10px;
+
+    border-color: #0fdceb;
+  }
+  
+  #summary-Table th,
+  #summary-Table td {
+    border: 1px solid #534b4b;
+    padding: 8px;
+    text-align: right;
+  }
+  
+  #summary-Table th {
+    background-color: #f2f2f2;
+  }
+#summaryHead th{
+    background-color: #5ab5d1;
+}
+
+
+/*--details pg--*/
+
+.iti {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+input[type=tel] {
+    padding-right: 6px;
+    padding-left: 52px;
+    margin-left: 0;
+
+    position: relative;
+    z-index: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-right: 0;
+    border: 1px solid #CCC;
+    width: 270px;
+    height: 35px;
+    /* padding: 6px 12px; */
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 100%;
+    color: inherit;
+}
+
+.detailsButton {
+    color: #FFF;
+    background-color: #428BCA;
+    border: 1px solid #357EBD;
+    height: 39px;
+    margin: 0;
+    padding: 6px 20px;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 100%;
+}
+
+.detailsButton:hover {
+    background-color: #3276B1;
+    border-color: #285E8E;
+    cursor: pointer;
+}
+.row-1{
+    margin-left: 200px;
+}
+
+
+
+
+
+
+
+
+.formD {
+    width: 300px;
+    margin: 20vh auto 0 auto;
+    padding: 20px;
+    background-color: rgb(250, 239, 239);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
+
+
+
+#mobile-number-container {
+    margin-bottom: 10px;
+    display: flex;
+  }
+
+
+/* Styles for the selected flag */
+#selected-flag {
+    margin-top: 10px;
+  }
+  
+  /* Styles for the selected country code */
+  #selected-country-code {
+    font-weight: bold;
+    background-color: #033a3b;
+    width: 30px;
+  }
+  
+  /* Styles for the save button */
+  #save-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  
+  #save-button:hover {
+    background-color: #0056b3;
+  }
+
+
+
+  .tableDivSum {
+    margin-top: 20px;
+    padding: 5px;
+    border: 1px solid #4d3434;
+    border-radius: 5px;
+    margin-left: 20px;
+    color: #FFF;
+    margin-left: 280px;
+  }
+  
+  #tableSummary {
+    width: 60%;
+    border-collapse: collapse;
+    margin-top: 10px;
+
+    border-color: #0fdceb;
+  }
+  
+  #summaryHeadSummary th,
+  #summaryHeadSummary td {
+    border: 1px solid #534b4b;
+    padding: 8px;
+    text-align: right;
+  }
+  
+  #summaryHeadSummary th {
+    background-color: #f2f2f2;
+  }
+  #summaryHeadSummary th{
+    background-color: #5ab5d1;
+}
+
+
+.confiremationPage{
+    width:100%;
+    background-color: #f3faf5;
+    font-size: 16px;
+}
+
+
+
+  
+    
+  
+  
+  
+  
+  

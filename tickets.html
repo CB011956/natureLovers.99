@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turtle hatcheries in SriLanka</title>
+  <link rel="stylesheet" href="style.css">
+
+
+  <link rel="icon" href="favicon-32x32.png">
+
+
+
+  <style>
+    .multiselect {
+
+      margin-top: 10px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .select-box {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    .options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1;
+      display: none;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .options label {
+      display: block;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .options label:hover {
+      background-color: #f5f5f5;
+    }
+
+    .arrow {
+      border: solid #000;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(45deg);
+      margin-left: 10px;
+    }
+
+    .select-box.open .arrow {
+      transform: rotate(-135deg);
+    }
+
+    .sparrow {
+      color: rgb(55, 0, 255);
+    }
+
+
+    #charge-table tbody tr {
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  background-color: #0f5764;
+  color: #fff;
+}
+
+#charge-table tbody tr:hover {
+  background-color: #44ecb4;
+}
+
+/* Style the table data cells */
+#charge-table tbody td {
+  border: 1px solid #f1cccc;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Style the table footer row */
+#charge-table tfoot tr td {
+  border: none;
+  padding: 8px;
+  text-align: center;
+  font-style: italic;
+  color: #2f698f;
+}
+
+.table-info{
+
+  margin-left: 200px;
+}
+fieldset{
+  border-color: #e7eaee;
+}
+
+.error-container {
+    display: none;
+    color: red;
+    margin-top: 5px;
+}
+
+.error-message {
+    margin: 0;
+    font-size: 14px;
+}
+
+.continue-button {
+         padding:10px 105px;
+        background-color: #05ac0e;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 500px;
+      }
+
+ 
+      .continue-button:disabled {
+        background-color: #ccccccd8;
+        cursor: not-allowed;
+      }
+
+
+
+  </style>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+  <section class="header">
+    <nav>
+        <h2 class="logo">~Nat<span>Ure~</span></h2>
+        <div class="nav-link" id="navLink">
+            <img src="icons8-close-32.png" onclick="hideMenu()" alt="close">
+            <ul>
+              <li><a href="tickets.html">TICKETS</a></li>
+                <li><a href="details.html">DETAILS PAGE</a></li>
+                <li><a href="payments.html">PAYMENT PAGE</a></li>
+                <li><a href="confiremation.html">CONFIRMATION</a></li>
+                
+            </ul>
+        </div>
+        <img src="menu.png" onclick="showMenu()" alt="menu">
+    </nav>
+
+
+  <section class="tic-header">
+
+   
+    <div class="topic">
+      <h1>Buy Tickets</h1>
+
+      <div class="homi">
+
+
+        <a href="index.html">
+          <p>
+            < Home<p>
+        </a>
+      </div>
+
+
+    </div>
+
+
+
+
+  </section>
+  <section>
+    <form id="myForm" class="formStyle">
+      <fieldset>
+
+        <h1>When are you coming</h1>
+        <input type="date" id="datepicker" placeholder="Select a date">
+        <button id="clear-button">Clear</button>
+        <style>
+          h1 {
+            text-align: center;
+          }
+
+          #datepicker {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 20px auto;
+            font-size: 16px;
+            background-color: aquamarine;
+          }
+
+          #clear-button {
+            display: block;
+            margin: 10px auto;
+            background-color: blue;
+            color: aliceblue;
+          }
+        </style>
+
+
+
+
+
+
+
+
+
+
+      </fieldset>
+
+
+
+
+
+      <fieldset>
+        <h2>Guests</h2>
+        <div class="top-guest">
+          <h2>Available categorized Tickets</h2>
+
+          <ul>
+            <li><input type="radio">SL Adult</li>
+            <li><input type="radio">SL Child</li>
+            <li><input type="radio">Foreigner Adult</li>
+            <li><input type="radio">Foreigner Child</li>
+            <li><input type="radio">Infant</li>
+
+
+          </ul>
+        </div>
+      </fieldset>
+      <fieldset>
+       
+        <div class="information">
+          <div class="info">
+            <p> SL Adults</p>
+            <button type="button" onclick="changeCount('sriLankan', -1)"> -</button>
+            <h3 id="sriLankan">0</h3>
+            <button type="button" onclick="changeCount('sriLankan', 1)"> + </button>
+          </div>
+      
+          <div class="info">
+            <p> SL <br>Children</p>
+            <button type="button" onclick="changeCount('child-counting', -1)"> -</button>
+            <h3 id="child-counting">0</h3>
+            <button type="button" onclick="changeCount('child-counting', 1)"> + </button>
+          </div>
+          <div class="info">
+            <p> Foreign<br> Adults</p>
+            <button type="button" onclick="changeCount('adultf-counting', -1)"> -</button>
+            <h3 id="adultf-counting">0</h3>
+            <button type="button" onclick="changeCount('adultf-counting', 1)"> + </button>
+          </div>
+          <div class="info">
+            <p> Foreign <br>Children</p>
+            <button type="button" onclick="changeCount('childf-counting', -1)"> -</button>
+            <h3 id="childf-counting">0</h3>
+            <button type="button" onclick="changeCount('childf-counting', 1)"> + </button>
+          </div>
+        </div>
+
+
+
+
+
+      </fieldset>
+
+
+
+
+      <fieldset>
+        <!--<fieldset class="durat">-->
+        <h2>Duration</h2>
+        <h3> Select the time duration</h3>
+
+        <div class="row-1">
+          <div class="table-info">
+            <table id="charge-table">
+              <thead>
+                <tr>
+                  <th colspan="3"></th>
+                </tr>
+                <tr>
+                  <th>Category</th>
+                  <th>Charge per one Peak hour</th>
+                  <th>Charge per one Normal hour</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="firstRow">
+                  <td>SL Adult</td>
+                  <td  id="6usd">6 USD</td>
+                  <td  id="4usd">4 USD</td>
+                </tr>
+                <tr id="secondRow">
+                  <td>SL Child</td>
+                  <td id="3ud">3 USD</td>
+                  <td id="2ud">2 USD</td>
+                </tr>
+                <tr id="thirdRow">
+                  <td>Foreign Adult</td>
+                  <td id="13ud">13 USD</td>
+                  <td id="10ud">10 USD</td>
+                </tr>
+                <tr id="forthRow">
+                  <td>Foreign Child</td>
+                  <td id="8ud">8 USD</td>
+                  <td id="5ud">5 USD</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3"> * SL or Foreign infants (Under 4 Years) entrance is completely free</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      
+        
+        
+      
+      
+      
+      
+      
+      
+      
+
+
+        <div>
+          <h2>Your time duration Here</h2>
+        </div>
+        <div class="multiselect">
+          <div class="select-box">
+            <span class="sparrow">Select Your time</span>
+            <div class="arrow"></div>
+          </div>
+          <div class="options">
+            <label>
+              <input type="checkbox" value=" 7.00am-8.00am" />
+              7.00am-8.00am
+            </label>
+            <label>
+              <input type="checkbox" value="  8.00am-9.00am" />
+              8.00am-9.00am
+            </label>
+            <label>
+              <input type="checkbox" value="9.00am-10.00am" />
+              9.00am-10.00am
+            </label>
+            <label>
+              <input type="checkbox" value=" 10.00am-11.00am(Peak hour)" />
+              10.00am-11.00am(Peak hour)
+            </label>
+            <label>
+              <input type="checkbox" value="11.00am-12.00am(peak hour)" />
+              11.00am-12.00am(peak hour)
+            </label>
+            <label>
+              <input type="checkbox" value=" 12.00pm-1.00pm(peakhour)" />
+              12.00pm-1.00pm(peakhour)
+            </label> <label>
+              <input type="checkbox" value="1.00pm-2.00pm" />
+              1.00pm-2.00pm
+            </label>
+            <label>
+              <input type="checkbox" value="2.00pm-3.00pm" />
+              2.00pm-3.00pm
+            </label>
+            <label>
+              <input type="checkbox" value=" 3.00pm-4.00pm(peak hour)" />
+              3.00pm-4.00pm(peak hour)
+            </label>
+            <label>
+            </label>
+            <input type="checkbox" value="" />
+            4.00pm-5.00pm(peak hour)
+            </label>
+            <label>
+              <input type="checkbox" value=" 5.00pm-6.00pm(peak hour)" />
+              5.00pm-6.00pm(peak hour)
+            </label>
+
+          </div>
+        </div>
+
+        <div id="error-container" class="error-container">
+          <p id="error-message" class="error-message"></p>
+      </div>
+     
+      
+      
+      
+      
+
+
+
+
+
+      <fieldset>
+      <div id="total-payable">
+        <h3>Total Payable:</h3>
+        <p id="total-charge"></p>
+    </div>
+      
+
+
+
+
+
+
+
+        <br>
+        <button type="submit">Submit</button>
+      </fieldset>
+
+
+
+
+   
+<fieldset>
+    <div class="summaryT">
+      <table id="summary-Table">
+        <thead id="summaryHead">
+          <th>Field</th>
+          <th>Description</th>
+        </thead>
+        <tbody id="summaryBody">
+         
+
+
+        </tbody>
+      </table>
+    </div>
+    </fieldset>
+    </form>
+    <button type="submit" class="continue-button" id="contButton" disabled>Continue with Pharchase</button>
+
+   
+  </section>
+
+</section>
+  <div class="fotr">
+
+    <p>If you wish to join with us you can follow us</p>
+
+    <div class="ic">
+      <img src="23fb.png" alt="fb"><img src="45ins.png" alt="ins"><img src="56tw.png" alt="twit"><img src="link.png"
+        alt="linkd">
+
+      <p>Presented by<img src="icons8-heart-94.png" alt="heart"> Nature Travelers</p>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+    <script>
+
+
+
+
+
+
+
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const datepicker = document.getElementById("datepicker");
+        const clearButton = document.getElementById("clear-button");
+
+        // Load the stored date if it exists
+        if (localStorage.getItem("pickedDate")) {
+          datepicker.value = localStorage.getItem("pickedDate");
+        }
+
+        datepicker.addEventListener("change", function () {
+          const pickedDate = datepicker.value;
+
+          // Store the picked date in local storage
+          localStorage.setItem("pickedDate", pickedDate);
+        });
+
+        clearButton.addEventListener("click", function () {
+          // Clear the stored date and the input field
+          localStorage.removeItem("pickedDate");
+          datepicker.value = "";
+        });
+      });
+//guest
+
+
+document.addEventListener("DOMContentLoaded", function () {
+      const counters = {
+        'sriLankan': document.getElementById('sriLankan'),
+        'child-counting': document.getElementById('child-counting'),
+        'adultf-counting': document.getElementById('adultf-counting'),
+        'childf-counting': document.getElementById('childf-counting'),
+      };
+
+      // Load stored values if they exist
+      Object.keys(counters).forEach(key => {
+        const storedValue = localStorage.getItem(key);
+        if (storedValue !== null) {
+          counters[key].textContent = storedValue;
+        }
+      });
+
+      function updateLocalStorage(key, value) {
+        localStorage.setItem(key, value);
+      }
+
+      function updateCounter(key, amount) {
+        const counter = counters[key];
+        let count = parseInt(counter.textContent) + amount;
+        if (count < 0) {
+          count = 0;
+        }
+        counter.textContent = count;
+        updateLocalStorage(key, count.toString());
+      }
+     
+      window.changeCount = function(key, amount) {
+        updateCounter(key, amount);
+      };
+
+
+ 
+
+   
+  
+
+
+
+
+
+
+    });
+   
+
+
+//duration check box
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const selectBox = document.querySelector(".select-box");
+        const options = document.querySelector(".options");
+        const checkboxes = document.querySelectorAll(".options input[type='checkbox']");
+
+        // Load stored selected options if they exist
+        const storedSelectedOptions = JSON.parse(localStorage.getItem("selectedOptions")) || [];
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = storedSelectedOptions.includes(checkbox.value);
+        });
+
+        selectBox.addEventListener("click", function () {
+          this.classList.toggle("open");
+          options.style.display = this.classList.contains("open") ? "block" : "none";
+        });
+
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener("change", updateSelectedOptions);
+        });
+
+        function updateSelectedOptions() {
+          const selectedOptions = [];
+          checkboxes.forEach((checkbox) => {
+            if (checkbox.checked) {
+              selectedOptions.push(checkbox.value);
+            }
+          });
+          selectBox.querySelector("span").textContent = selectedOptions.join(", ");
+
+          // Store selected options in local storage
+          localStorage.setItem("selectedOptions", JSON.stringify(selectedOptions));
+        }
+      });
+
+
+//guest table
+
+
+
+
+  // Function to calculate charges and update total payable
+  function updateTotalCharge() {
+            const slAdultCount = parseInt(document.getElementById('sriLankan').textContent);
+            const slChildCount = parseInt(document.getElementById('child-counting').textContent);
+            const foreignAdultCount = parseInt(document.getElementById('adultf-counting').textContent);
+            const foreignChildCount = parseInt(document.getElementById('childf-counting').textContent);
+
+            const slAdultCharge = slAdultCount * (6 * 1); // Peak hour charge
+            const slChildCharge = slChildCount * (3 * 1); // Peak hour charge
+            const foreignAdultCharge = foreignAdultCount * (13 * 1); // Peak hour charge
+            const foreignChildCharge = foreignChildCount * (8 * 1); // Peak hour charge
+
+            const totalCharge = slAdultCharge + slChildCharge + foreignAdultCharge + foreignChildCharge;
+            document.getElementById('total-charge').textContent = totalCharge + " USD";
+            
+
+        }
+
+        // Function to change count and update total charge
+        function changeCount(category, change) {
+            const countElement = document.getElementById(category);
+            const currentCount = parseInt(countElement.textContent);
+            const newCount = Math.max(currentCount + change, 0);
+            countElement.textContent = newCount;
+
+            updateTotalCharge();
+        }
+
+        // Initial calculation
+        updateTotalCharge();
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+  updateSummaryTable(); // Initial update
+
+  function updateSummaryTable() {
+    const summaryTableBody = document.getElementById("summaryBody");
+    summaryTableBody.innerHTML = ''; // Clear previous rows
+ // Calculate totals
+
+
+
+
+
+    // Retrieve data from local storage
+    const pickedDate = localStorage.getItem("pickedDate");
+    const selectedRowData = JSON.parse(localStorage.getItem("selectedRowData"));
+    const selectedOptions = JSON.parse(localStorage.getItem("selectedOptions"));
+    const calculatedFee = parseFloat(localStorage.getItem("calculatedFee"));
+    const totalPayable = parseFloat(localStorage.getItem("totalPayable")); // Retrieve totalPayable
+    const slAdultCount = parseInt(localStorage.getItem("sriLankan"));
+    const slChildCount = parseInt(localStorage.getItem("child-counting"));
+    const foreignerAdultCount = parseInt(localStorage.getItem("adultf-counting"));
+    const foreignerChildCount = parseInt(localStorage.getItem("childf-counting"));
+    
+
+    // Populate the summary table
+    const rows = [
+      { field: "Picked Date", description: pickedDate },
+      { field: "Selected Category", description: selectedRowData?.category || "" },
+      { field: "Selected Options", description: selectedOptions?.join(", ") || "" },
+      { field: "Calculated Fee", description: calculatedFee ? calculatedFee.toFixed(2) + " USD" : "" },
+      { field: "Total Payable", description: totalPayable ? totalPayable.toFixed(2) + " USD" : "" }, // Display totalPayable
+      { field: "SL Adults", description: slAdultCount },
+      { field: "SL Children", description: slChildCount },
+      { field: "Foreign Adults", description: foreignerAdultCount },
+      { field: "Foreign Children", description: foreignerChildCount },
+
+    ];
+
+
+
+
+
+
+    rows.forEach(rowData => {
+      const row = document.createElement("tr");
+      row.innerHTML = `<td>${rowData.field}</td><td>${rowData.description}</td>`;
+      summaryTableBody.appendChild(row);
+    });
+  }
+
+
+
+  const myForm = document.getElementById("myForm");
+  myForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
+    updateSummaryTable();
+  });
+});
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const myForm = document.getElementById("myForm");
+    const datepicker = document.getElementById("datepicker");
+    const checkboxes = document.querySelectorAll(".options input[type='checkbox']");
+    const contButton = document.getElementById("contButton");
+
+    myForm.addEventListener("submit", function (event) {
+        let isValid = true;
+
+        // Validate date format
+        const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+        if (!datePattern.test(datepicker.value)) {
+            showError("Invalid date format. Please use YYYY-MM-DD format.");
+            isValid = false;
+        }
+
+        // Validate date range (assuming you have a valid range)
+        const selectedDate = new Date(datepicker.value);
+        const minDate = new Date("2023-01-01");
+        const maxDate = new Date("2023-12-31");
+        if (selectedDate < minDate || selectedDate > maxDate) {
+            showError("Selected date is not within the valid range.");
+            isValid = false;
+        }
+
+        // Validate at least one checkbox is selected
+        let checkedCount = 0;
+        checkboxes.forEach((checkbox) => {
+            if (checkbox.checked) {
+                checkedCount++;
+            }
+        });
+        if (checkedCount === 0) {
+            showError("Please select at least one time duration.");
+            isValid = false;
+        }
+
+        if (isValid) {
+            contButton.removeAttribute("disabled"); // Enable the button
+        } else {
+            showError("Please fix the form errors before continuing.");
+        }
+    });
+
+
+    contButton.addEventListener("click", function () {
+        // Navigate to the next page or perform any other desired action
+        window.location.href = "details.html"; // Replace with the actual URL
+    });
+
+
+
+    function showError(message) {
+        const errorContainer = document.getElementById("error-container");
+        const errorMessage = document.getElementById("error-message");
+        errorMessage.textContent = message;
+        errorContainer.style.display = "block";
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+</html>

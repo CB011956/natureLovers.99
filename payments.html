@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turtle hatcheries in SriLanka</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon-32x32.png">
+
+  <style>
+    .yourPayment {
+      text-align: center;
+      background-color: #0ba073d2;
+    }
+
+    .paymentForm {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 300px;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .buttonPay {
+      padding: 10px 125px;
+      background-color: #05ac0e;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .buttonPay:disabled {
+      background-color: #ccccccd8;
+      cursor: not-allowed;
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+
+  <section class="header">
+    <nav>
+      <h2 class="logo">~Nat<span>Ure~</span></h2>
+      <div class="nav-link" id="navLink">
+        <img src="icons8-close-32.png" onclick="hideMenu()" alt="close">
+        <ul>
+          <li><a href="tickets.html">TICKETS</a></li>
+          <li><a href="details.html">DETAILS PAGE</a></li>
+          <li><a href="payments.html">PAYMENT PAGE</a></li>
+          <li><a href="confiremation.html">CONFIRMATION</a></li>
+
+        </ul>
+      </div>
+      <img src="menu.png" onclick="showMenu()" alt="menu">
+    </nav>
+
+
+
+
+
+
+
+
+    <section class="tic-header">
+
+
+
+      <div class="topic">
+        <h1>Buy Tickets</h1>
+
+        <div class="homi">
+
+
+          <a href="index.html">
+            <p>
+              < Home<p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- Summary Table -->
+    <div class="tableDivSum">
+      <table id="tableSummary">
+        <thead id="summaryHeadSummary">
+          <th>Field</th>
+          <th>Description</th>
+        </thead>
+        <tbody id="summaryBodySummary">
+        </tbody>
+      </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="yourPayment">
+
+
+
+
+      <h2>Enter Your Details</h2>
+
+      <form id="paymentForm">
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" required>
+        <br>
+        <label for="cardHolderName">Cardholder Name:</label>
+        <input type="text" id="cardHolderName" name="cardHolderName" required>
+        <br>
+        <label for="expiryDate">Expiry Date:</label>
+        <input type="text" id="expiryDate" name="expiryDate" required>
+        <br>
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required>
+        <br>
+        <div class="cards">
+          <img src="visa.(2).jpg" alt="visa">
+          <img src="master.jpg" alt="master">
+          <img src="pal.jpg" alt="pay">
+        </div>
+        <br>
+        <button type="submit" id="payButton" class="buttonPay" disabled>Pay</button>
+      </form>
+
+
+
+
+
+
+
+
+
+    </section>
+
+</section>
+    <div class="fotr">
+
+      <p>If you wish to join with us you can follow us</p>
+
+      <div class="ic">
+        <img src="23fb.png" alt="fb"><img src="45ins.png" alt="ins"><img src="56tw.png" alt="twit"><img src="link.png"
+          alt="linkd">
+
+        <p>Presented by<img src="icons8-heart-94.png" alt="heart"> Nature Travelers</p>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      <script src="script.js"></script>
+
+
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          updateSummaryTable(); // Initial update
+
+          function updateSummaryTable() {
+            const summaryTableBodySummary = document.getElementById("summaryBodySummary");
+            summaryTableBodySummary.innerHTML = ''; // Clear previous rows
+
+            // Retrieve data from local storage or wherever you store it
+            const pickedDate = localStorage.getItem("pickedDate");
+            const selectedOptions = JSON.parse(localStorage.getItem("selectedOptions"));
+            const calculatedFee = parseFloat(localStorage.getItem("calculatedFee"));
+            const totalPayable = parseFloat(localStorage.getItem("totalPayable"));
+            const slAdultCount = parseInt(localStorage.getItem("sriLankan"));
+            const slChildCount = parseInt(localStorage.getItem("child-counting"));
+            const foreignerAdultCount = parseInt(localStorage.getItem("adultf-counting"));
+            const foreignerChildCount = parseInt(localStorage.getItem("childf-counting"));
+            const fullName = localStorage.getItem("fullName");
+            const mobileNumber = localStorage.getItem("mobileNumber");
+            const email = localStorage.getItem("email");
+            const confirmEmail = localStorage.getItem("confirmEmail");
+            const gender = localStorage.getItem("gender");
+
+
+            // Populate the summary table
+            const rows = [
+              { field: "Picked Date", description: pickedDate },
+              { field: "Selected Options", description: selectedOptions?.join(", ") || "" },
+              { field: "Calculated Fee", description: calculatedFee ? calculatedFee.toFixed(2) + " USD" : "" },
+              { field: "Total Payable", description: totalPayable ? totalPayable.toFixed(2) + " USD" : "" },
+              { field: "SL Adults", description: slAdultCount },
+              { field: "SL Children", description: slChildCount },
+              { field: "Foreign Adults", description: foreignerAdultCount },
+              { field: "Foreign Children", description: foreignerChildCount },
+              { field: "Full Name", description: fullName },
+              { field: "Mobile Number", description: mobileNumber },
+              { field: "E Mail", description: email },
+              { field: "Confirm E Mail", description: confirmEmail },
+              { field: "Gender", description: gender },
+            ];
+
+            rows.forEach(rowData => {
+              const row = document.createElement("tr");
+              row.innerHTML = `<td>${rowData.field}</td><td>${rowData.description}</td>`;
+              summaryTableBodySummary.appendChild(row);
+            });
+          }
+
+          // Call the function to populate the table initially
+          updateSummaryTable();
+        });
+
+       
+        function validateForm() {
+  // Get values from the form
+  const cardNumber = document.getElementById('cardNumber').value;
+  const expiryDate = document.getElementById('expiryDate').value;
+  const cvv = document.getElementById('cvv').value;
+
+  // Perform validation here (you can use regular expressions or any other validation logic)
+  // For simplicity, let's just check if all fields are filled with some content
+
+  const isFormValid = cardNumber.trim() !== '' && expiryDate.trim() !== '' && cvv.trim() !== '';
+  return isFormValid;
+}
+
+// Function to enable/disable the "Pay" button based on form validation
+function updatePayButtonState() {
+  payButton.disabled = !validateForm();
+}
+
+// Add event listeners to the form fields to update the button state whenever they change
+document.getElementById('cardNumber').addEventListener('input', updatePayButtonState);
+document.getElementById('expiryDate').addEventListener('input', updatePayButtonState);
+document.getElementById('cvv').addEventListener('input', updatePayButtonState);
+
+
+
+// Add event listener to the form
+document.getElementById("paymentForm").addEventListener("submit", function (event) {
+  if (!validateForm()) {
+    event.preventDefault(); // Prevent form submission if validation fails
+  } else {
+    // Redirect to the next page
+    window.location.href = "confiremation.html"; // Replace with the actual URL of the next page
+  }
+});
+       
+      </script>
+</body>
+
+</html>
